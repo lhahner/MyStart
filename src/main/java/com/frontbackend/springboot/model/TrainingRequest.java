@@ -7,7 +7,7 @@ public class TrainingRequest {
     private String start_time;
     private String end_time;
     private String training_date;
-    private String trainer;
+    private Trainer trainer;
     private String admin_id;
     
     //Getters
@@ -26,9 +26,11 @@ public class TrainingRequest {
 	public String getTraining_date() {
 		return training_date;
 	}
-	public String getTrainerID() {
+
+	public Trainer getTrainer() {
 		return trainer;
 	}
+
 	public String getAdmin_id() {
 		return admin_id;
 	}
@@ -49,9 +51,11 @@ public class TrainingRequest {
 	public void setTraining_date(String training_date) {
 		this.training_date = training_date;
 	}
-	public void setTrainerID(String trainer) {
+
+	public void setTrainer(Trainer trainer) {
 		this.trainer = trainer;
 	}
+
 	public void setAdmin_ks(String admin_id) {
 		this.admin_id = admin_id;
 	}

@@ -52,10 +52,10 @@ public class Training {
 	public String getAdmin_id() {
 		return admin_id;
 	}
-	public String getTrainerID() {
-		return trainer.getTrainer_id();
+	public Trainer getTrainer() {
+		return trainer;
 	}
-	
+
 	//Setters
 	public void setTrainingID(String trainingID) {
 		this.trainingID = trainingID;
@@ -72,8 +72,8 @@ public class Training {
 	public void setTraining_date(String training_date) {
 		this.training_date = training_date;
 	}
-	public void setTrainerID(String trainerID) {
-		this.setTrainerID(trainerID);
+	public void setTrainer(Trainer trainer) {
+		this.trainer = trainer;
 	}
 	public void setAdmin_id(String admin_id) {
 		this.admin_id = admin_id;

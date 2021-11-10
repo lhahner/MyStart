@@ -32,7 +32,7 @@ public class TrainingService {
         training.setEnd_time(request.getEnd_time());
         training.setStart_time(request.getStart_time());
         training.setTopic(request.getTopic());
-        training.setTrainerID(request.getTrainerID());
+        training.setTrainer(request.getTrainer());
         training.setTraining_date(request.getTraining_date());
 
         return trainingRepository.save(training).getTrainingID();
@@ -45,7 +45,7 @@ public class TrainingService {
             forUpdate.setTopic(request.getTopic());
             forUpdate.setStart_time(request.getStart_time());
             forUpdate.setEnd_time(request.getEnd_time());
-            forUpdate.setTrainerID(request.getTrainerID());
+            forUpdate.setTrainer(request.getTrainer());
             forUpdate.setTraining_date(request.getTraining_date());
             trainingRepository.save(forUpdate);
         }
