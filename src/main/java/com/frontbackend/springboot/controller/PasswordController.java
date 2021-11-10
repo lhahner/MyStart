@@ -25,26 +25,16 @@ import com.frontbackend.springboot.service.PasswordService;
 @RestController
 @RequestMapping("/api/password")
 public class PasswordController {
-	private final PasswordService passwordService;
+    private final PasswordService passwordService;
 
     @Autowired
     public PasswordController(PasswordService passwordService) {
         this.passwordService = passwordService;
     }
 
-    @GetMapping("{id}")
-    public ResponseEntity<Password> password(@PathVariable String id) {
-        Optional<Password> password = passwordService.findById(id);
-        return password.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
 
-    @GetMapping
-    public List<Password> list(@RequestParam(required = false) String groupid) {
-        if (StringUtils.isEmpty(groupid)) {
-            return passwordService.getAll();
-        }
-        return passwordService.findByGroupid(groupid); 
-    }
+
+
 
     @PostMapping
     public String save(@RequestBody PasswordRequest request) {

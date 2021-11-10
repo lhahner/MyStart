@@ -15,7 +15,7 @@ import com.frontbackend.springboot.repository.PasswordRepository;
 @Service
 public class PasswordService {
 
-	private final PasswordRepository passwordRepository;
+	private static PasswordRepository passwordRepository;
 
 	@Autowired
     public PasswordService(PasswordRepository passwordRepository) {
@@ -49,8 +49,8 @@ public class PasswordService {
 		return passwordRepository.findAll();
 	}
 
-	public List<Password> findByGroupid(String groupid) {
-		return passwordRepository.findAllByGroupidContaining(groupid);
+	public static List<Password> findByGroupname(String groupname) {
+		return passwordRepository.findAllByGroupnameContaining(groupname);
 	}
 
 	public void delete(String id) {

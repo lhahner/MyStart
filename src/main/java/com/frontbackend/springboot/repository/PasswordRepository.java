@@ -10,6 +10,6 @@ import com.frontbackend.springboot.model.Password;
 @Repository
 public interface PasswordRepository extends JpaRepository<Password, String> {
 	
-	List<Password> findAllByGroupidContaining(String groupid);
+	List<Password> findAllByGroupnameContaining(String groupname);
 	
 }
