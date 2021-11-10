@@ -26,11 +26,9 @@ public class TrainingRequest {
 	public String getTraining_date() {
 		return training_date;
 	}
-
 	public Trainer getTrainer() {
 		return trainer;
 	}
-
 	public String getAdmin_id() {
 		return admin_id;
 	}
@@ -51,12 +49,10 @@ public class TrainingRequest {
 	public void setTraining_date(String training_date) {
 		this.training_date = training_date;
 	}
-
 	public void setTrainer(Trainer trainer) {
 		this.trainer = trainer;
 	}
-
-	public void setAdmin_ks(String admin_id) {
+	public void setAdmin_id(String admin_id) {
 		this.admin_id = admin_id;
 	}
     

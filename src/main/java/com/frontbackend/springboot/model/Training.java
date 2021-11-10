@@ -22,6 +22,7 @@ public class Training {
     
     public Training() {
 	}
+
     public Training(String trainingID, String topic, String start_time, String end_time, String training_date,
 			Trainer trainer, String admin_id) {
 		this.trainingID = trainingID;

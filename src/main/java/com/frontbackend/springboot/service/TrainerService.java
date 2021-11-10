@@ -26,6 +26,8 @@ public class TrainerService {
 		return trainerRepository.findById(id);
 	}
 
+
+
 	public String save(TrainerRequest request) {
 		Trainer trainer = new Trainer();
 		trainer.setEmail(request.getEmail());

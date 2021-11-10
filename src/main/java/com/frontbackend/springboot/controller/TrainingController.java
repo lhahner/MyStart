@@ -3,6 +3,9 @@ package com.frontbackend.springboot.controller;
 import java.util.List;
 import java.util.Optional;
 
+import com.frontbackend.springboot.model.*;
+import com.frontbackend.springboot.service.TrainerService;
+import com.frontbackend.springboot.service.TrainingPostRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
@@ -17,8 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.frontbackend.springboot.model.Training;
-import com.frontbackend.springboot.model.TrainingRequest;
 import com.frontbackend.springboot.service.TrainingService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -27,11 +28,14 @@ import com.frontbackend.springboot.service.TrainingService;
 public class TrainingController {
 
     private final TrainingService trainingService;
+    private final TrainerService trainerService;
 
     @Autowired
-    public TrainingController(TrainingService trainingService) {
+    public TrainingController(TrainingService trainingService, TrainerService trainerService) {
         this.trainingService = trainingService;
+        this.trainerService = trainerService;
     }
+
 
     @GetMapping("{id}")
     public ResponseEntity<Training> training(@PathVariable String id) {
@@ -48,7 +52,17 @@ public class TrainingController {
     }
 
     @PostMapping
-    public String save(@RequestBody TrainingRequest request) {
+    public String save(@RequestBody TrainingPostRequest input) {
+        TrainingPostRequest in = TrainingPostRequestService.saveUpdatePost(input);
+        TrainingRequest request = new TrainingRequest();
+        Trainer TD = new Trainer();
+        request.setTrainer(trainerService.findById(in.getTrainerID()).orElse(TD));
+        request.setTrainingID("0");
+        request.setTopic(in.getTopic());
+        request.setStart_time(in.getStart_time());
+        request.setEnd_time(in.getEnd_time());
+        request.setTraining_date(in.getTraining_date());
+        request.setAdmin_id("1");
         return trainingService.save(request);
     }
 
