@@ -1,8 +1,8 @@
 package com.frontbackend.springboot.controller;
 
-import com.frontbackend.springboot.model.Password;
-import com.frontbackend.springboot.model.PasswordRequest;
-import com.frontbackend.springboot.model.pwIn;
+import com.frontbackend.springboot.model.*;
+import com.frontbackend.springboot.service.CredsService;
+import com.frontbackend.springboot.service.MessageService;
 import com.frontbackend.springboot.service.PasswordService;
 import com.frontbackend.springboot.service.pwInService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,21 +25,22 @@ public class pwInController {
 
     @PostMapping(
             value = "/logIn", consumes = "application/json")
-    public String createPerson(@RequestBody pwIn pwin) throws JSONException {
+    public <T> T createPerson(@RequestBody pwIn pwin) throws JSONException {
         pwIn input = pwInService.saveUpdatePerson(pwin);
         String username = input.getUsername();
         String password = input.getPassword();
         List <Password> credentials = PasswordService.findByGroupname(username);
         if (credentials.isEmpty()) {
-            String content = "message: This username does not exist";
-            return content;
+            Message m = new Message("This user does not exist");
+            return (T) MessageService.saveUpdateMessage(m);
         } else {
             String dbPw = credentials.get(0).getPw();
             if (password.equals(dbPw)) {
-                String content = "groupid: "+credentials.get(0).getGroupid()+", groupname: " + credentials.get(0).getGroupname();
-                return content;
+                Creds c = new Creds(credentials.get(0).getGroupid(), credentials.get(0).getGroupname());
+                return (T) CredsService.saveUpdateCreds(c);
             } else {
-                return "message: Wrong password, please try again";
+                Message m = new Message("Wrong password, please try again");
+                return (T) MessageService.saveUpdateMessage(m);
             }
         }
     }
