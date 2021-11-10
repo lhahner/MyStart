@@ -24,7 +24,7 @@ public class pwInController {
 
 
     @PostMapping(
-            value = "/logIn", consumes = "application/json", produces = "application/json")
+            value = "/logIn", consumes = "application/json")
     public String createPerson(@RequestBody pwIn pwin) throws JSONException {
         pwIn input = pwInService.saveUpdatePerson(pwin);
         String username = input.getUsername();
@@ -36,7 +36,7 @@ public class pwInController {
         } else {
             String dbPw = credentials.get(0).getPw();
             if (password.equals(dbPw)) {
-                String content = "groupid: "+credentials.get(0).getGroupid()+",groupname: " + credentials.get(0).getGroupname();
+                String content = "groupid: "+credentials.get(0).getGroupid()+", groupname: " + credentials.get(0).getGroupname();
                 return content;
             } else {
                 return "message: Wrong password, please try again";
