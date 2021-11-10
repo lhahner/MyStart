@@ -1,9 +1,6 @@
 package com.frontbackend.springboot.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -12,8 +9,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class Admin {
 	
 	@Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String admin_id;
 	private String first_name;
 	private String last_name;
