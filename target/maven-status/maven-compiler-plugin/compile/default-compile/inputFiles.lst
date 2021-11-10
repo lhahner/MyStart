@@ -1,6 +1,16 @@
-C:\Users\lennart.hahner\OneDrive - Accenture\Documents\Dev\Spring\demo\src\main\java\com\frontbackend\springboot\Application.java
-C:\Users\lennart.hahner\OneDrive - Accenture\Documents\Dev\Spring\demo\src\main\java\com\frontbackend\springboot\repository\PostRepository.java
-C:\Users\lennart.hahner\OneDrive - Accenture\Documents\Dev\Spring\demo\src\main\java\com\frontbackend\springboot\model\Post.java
-C:\Users\lennart.hahner\OneDrive - Accenture\Documents\Dev\Spring\demo\src\main\java\com\frontbackend\springboot\controller\PostsController.java
-C:\Users\lennart.hahner\OneDrive - Accenture\Documents\Dev\Spring\demo\src\main\java\com\frontbackend\springboot\model\PostRequest.java
-C:\Users\lennart.hahner\OneDrive - Accenture\Documents\Dev\Spring\demo\src\main\java\com\frontbackend\springboot\service\PostService.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\repository\TrainingRepository.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\service\TrainingService.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\model\Admin.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\model\Training.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\model\TrainingRequest.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\service\AdminService.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\controller\TrainingController.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\model\TrainerRequest.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\repository\TrainerRepository.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\Application.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\model\AdminRequest.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\controller\TrainerController.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\repository\AdminRepository.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\controller\AdminController.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\model\Trainer.java
+C:\Users\niclas.ruemmler\Documents\Development\angular11-spring-boot2-mysql\src\main\java\com\frontbackend\springboot\service\TrainerService.java

@@ -1,6 +1,1 @@
 com\frontbackend\springboot\Application.class
-com\frontbackend\springboot\controller\PostsController.class
-com\frontbackend\springboot\model\Post.class
-com\frontbackend\springboot\model\PostRequest.class
-com\frontbackend\springboot\service\PostService.class
-com\frontbackend\springboot\repository\PostRepository.class
