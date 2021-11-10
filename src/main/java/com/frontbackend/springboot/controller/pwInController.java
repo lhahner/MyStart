@@ -31,15 +31,15 @@ public class pwInController {
         String password = input.getPassword();
         List <Password> credentials = PasswordService.findByGroupname(username);
         if (credentials.isEmpty()) {
-            String content = "{\n'message':'This username does not exist'}";
+            String content = "message: This username does not exist";
             return content;
         } else {
             String dbPw = credentials.get(0).getPw();
             if (password.equals(dbPw)) {
-                String content = "{\n'groupid':'"+credentials.get(0).getGroupid()+"',\n'groupname':'" + credentials.get(0).getGroupname()+"'}";
+                String content = "groupid: "+credentials.get(0).getGroupid()+",groupname: " + credentials.get(0).getGroupname();
                 return content;
             } else {
-                return "{\n'message':'Wrong password, please try again'}";
+                return "message: Wrong password, please try again";
             }
         }
     }
