@@ -70,12 +70,12 @@ public class TrainingController {
     }
 
     @PutMapping("{id}")
-    public void update(@PathVariable String id, @RequestBody TrainingRequest request) {
-        Optional<Training> training = trainingService.findById(id);
+    public void update(@PathVariable String id, @RequestBody TrainingPostRequest request) {
+        Optional<TrainingDelete> training = trainingDeleteService.findById(id);
         if (training.isPresent()) {
-            trainingService.update(id, request);
+            trainingDeleteService.update(id, request);
         } else {
-            trainingService.save(request);
+            trainingDeleteService.save(request);
         }
     }
 
