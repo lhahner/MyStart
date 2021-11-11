@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.frontbackend.springboot.model.*;
 import com.frontbackend.springboot.service.TrainerService;
+import com.frontbackend.springboot.service.TrainingDeleteService;
 import com.frontbackend.springboot.service.TrainingPostRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,11 +30,13 @@ public class TrainingController {
 
     private final TrainingService trainingService;
     private final TrainerService trainerService;
+    private final TrainingDeleteService trainingDeleteService;
 
     @Autowired
-    public TrainingController(TrainingService trainingService, TrainerService trainerService) {
+    public TrainingController(TrainingService trainingService, TrainerService trainerService, TrainingDeleteService trainingDeleteService) {
         this.trainingService = trainingService;
         this.trainerService = trainerService;
+        this.trainingDeleteService = trainingDeleteService;
     }
 
 
@@ -78,6 +81,6 @@ public class TrainingController {
 
     @DeleteMapping("{id}")
     public void delete(@PathVariable String id) {
-        trainingService.delete(id);
+        trainingDeleteService.delete(id);
     }
 }

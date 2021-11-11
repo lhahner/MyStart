@@ -60,9 +60,5 @@ public class TrainingService {
         return trainingRepository.findAllByTopicContaining(topic);
     }
 
-    public void delete(String id) {
-        Optional<Training> training = findById(id);
-        training.ifPresent(trainingRepository::delete);
-    }
 
 }
